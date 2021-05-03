@@ -1,0 +1,80 @@
+<div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-5">Country : </div>
+        <div class="col-md-7">
+          <select class="form-control" [(ngModel)]="country" name="Country" (change)="onCountryChange($event)">
+            <option value="">--Choose one--</option>
+            <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+    </div>
+    <div class="col-md-2">
+      <button class="form-control btn btn-primary" data-toggle="modal" data-target="#ShowAnalysis" title="Show Analysis"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Show Analysis</button>
+    </div>
+  </div>
+  <br />
+  <p-table [value]="sales" dataKey="name" editMode="row" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" pageLinks="3" totalRecords="totalRecords">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Customer Country</th>
+        <th>Month</th>
+        <th>Order Amount</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+      <tr [pEditableRow]="rowData">
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.CustomerCountry}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.CustomerCountry}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.Month}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.Month}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.OrderAmount}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.OrderAmount}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<div class="modal fade" id="ShowAnalysis" role="dialog">
+  <div class="modal-dialog" style="overflow-y: initial !important">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-size:20px;">Analysis Dashboard</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <p-chart type="bar" [data]="barchartData" [options]="barchartOptions"></p-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

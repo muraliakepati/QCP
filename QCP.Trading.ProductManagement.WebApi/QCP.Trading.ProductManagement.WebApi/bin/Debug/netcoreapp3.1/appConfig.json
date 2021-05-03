@@ -1,0 +1,3 @@
+{
+  "ConnectionString": "Server=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\PracticeProjects\\QCP\\QCP.Trading.ProductManagement.WebApi\\QCP.Trading.ProductManagement.DataAccessComponent\\ProductManagementDatabase.mdf;Integrated Security=True;"
+}

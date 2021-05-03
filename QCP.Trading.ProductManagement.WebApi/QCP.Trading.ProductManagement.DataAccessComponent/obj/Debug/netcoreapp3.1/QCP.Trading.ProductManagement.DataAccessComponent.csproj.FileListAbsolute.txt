@@ -1,0 +1,13 @@
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\bin\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.deps.json
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\bin\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.dll
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.csprojAssemblyReference.cache
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.AssemblyInfoInputs.cache
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.AssemblyInfo.cs
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\bin\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.runtimeconfig.json
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\bin\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.runtimeconfig.dev.json
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.genruntimeconfig.cache
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\bin\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.pdb
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.dll
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.pdb
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\QCP.Trading.ProductManagement.DataAccessComponent.csproj.CoreCompileInputs.cache
+D:\PracticeProjects\QCP\QCP.Trading.ProductManagement.WebApi\QCP.Trading.ProductManagement.DataAccessComponent\obj\Debug\netcoreapp3.1\EFCoreSqlServerNetTopologySuite.cs

@@ -1,0 +1,135 @@
+<div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-5">Country : </div>
+        <div class="col-md-7">
+          <select class="form-control" [(ngModel)]="country" name="SupplierName" (change)="onCountryChange($event)">
+            <option value="">--Choose one--</option>
+            <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+    </div>
+    <div class="col-md-2">
+      <button class="form-control btn btn-primary" data-toggle="modal" data-target="#ShowAnalysis" title="Show Analysis"><i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Show Analysis</button>
+    </div>
+  </div>
+  <br />
+  <p-table [value]="products" dataKey="name" editMode="row" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" pageLinks="3" totalRecords="totalRecords">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Product Name</th>
+        <th>Supplier Name</th>
+        <th>Unit Price</th>
+        <th>Package</th>
+        <th>Is Discontinued</th>
+        <th>Country</th>
+        <th>Orders</th>
+        <th>Oders Value</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+      <tr [pEditableRow]="rowData">
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.ProductName}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.ProductName}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.SupplierName}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.SupplierName}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.UnitPrice}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.UnitPrice}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.Package}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.Package}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="checkbox" disabled [(ngModel)]="rowData.IsDiscontinued">
+            </ng-template>
+            <ng-template pTemplate="output">
+              <input pInputText type="checkbox" disabled [(ngModel)]="rowData.IsDiscontinued">
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.Country}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.Country}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.Orders}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.Orders}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              {{rowData.OrdersValue}}
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.OrdersValue}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<div class="modal fade" id="ShowAnalysis" role="dialog">
+  <div class="modal-dialog" style="overflow-y: initial !important">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-size:20px;">Analysis Dashboard</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="card">
+          <p-chart type="bar" [data]="barchartData" [options]="barchartOptions"></p-chart>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

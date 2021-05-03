@@ -1,0 +1,131 @@
+<div>
+  <div class="row">
+    <div class="col-md-10">
+    </div>
+    <div class="col-md-2">
+      <button class="form-control btn btn-primary" data-toggle="modal" data-target="#AddCustomer" title="Add New Customer"><i class="fa fa-plus" aria-hidden="true"></i>&nbsp;Add Customer</button>
+    </div>
+  </div>
+  <br />
+  <p-table [value]="customers" dataKey="name" editMode="row" [paginator]="true" [rows]="10" [rowsPerPageOptions]="[5,10,15,20]" pageLinks="3" totalRecords="totalRecords">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Phone</th>
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-editing="editing" let-ri="rowIndex">
+      <tr [pEditableRow]="rowData">
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="rowData.FirstName">
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.FirstName}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="rowData.LastName">
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.LastName}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="rowData.City">
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.City}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="rowData.Country">
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.Country}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td>
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="rowData.Phone">
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{rowData.Phone}}
+            </ng-template>
+          </p-cellEditor>
+        </td>
+        <td style="text-align:center">
+          <button *ngIf="!editing" pButton type="button" pInitEditableRow
+                  class="ui-button-info" (click)="onRowEditInit(rowData)">
+            <i class="fa fa-pencil"></i>
+          </button>
+          <button *ngIf="editing" pButton type="button" pSaveEditableRow
+                  class="ui-button-success" style="margin-right: .5em" (click)="onRowEditSave(rowData)">
+            <i class="fa fa-check" aria-hidden="true"></i>
+          </button>
+          <button *ngIf="editing" pButton type="button" pCancelEditableRow
+                  class="ui-button-danger" (click)="onRowEditCancel(rowData, ri)">
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<div class="modal fade" id="AddCustomer" role="dialog">
+  <div class="modal-dialog" style="overflow-y: initial !important">
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="font-size:20px;">Add New Customer</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="row" style="margin:1%">
+          <div class="col-md-4" style="align-content:center"><label>First Name : </label></div>
+          <div class="col-md-6" style="align-content:center"><input type="text" class="form-control" [(ngModel)]="FirstName" /></div>
+        </div>
+        <div class="row" style="margin:1%">
+          <div class="col-md-4" style="align-content:center"><label>Last Name : </label></div>
+          <div class="col-md-6" style="align-content:center"><input type="text" class="form-control" [(ngModel)]="LastName" /></div>
+        </div>
+        <div class="row" style="margin:1%">
+          <div class="col-md-4" style="align-content:center"><label>City : </label></div>
+          <div class="col-md-6" style="align-content:center"><input type="text" class="form-control" [(ngModel)]="City" /></div>
+        </div>
+        <div class="row" style="margin:1%">
+          <div class="col-md-4" style="align-content:center"><label>Country : </label></div>
+          <div class="col-md-6" style="align-content:center"><input type="text" class="form-control" [(ngModel)]="Country" /></div>
+        </div>
+        <div class="row" style="margin:1%">
+          <div class="col-md-4" style="align-content:center"><label>Phone : </label></div>
+          <div class="col-md-6" style="align-content:center"><input type="text" class="form-control" [(ngModel)]="Phone" /></div>
+        </div>
+        <br />
+        <div>
+          <button type="Button" class="btn btn-primary" data-dismiss="modal" style="margin-left:45%;">Cancel</button>
+          <button id="saveCustomer" type="Button" class="btn btn-primary btn-md" style="margin-left:5%;" data-dismiss="modal" (click)="saveCustomer()">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
